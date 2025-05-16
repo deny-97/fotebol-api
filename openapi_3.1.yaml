@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: API de Jogos do Dia
+  version: 1.0.0
+servers:
+  - url: https://fotebol-api.onrender.com
+paths:
+  /jogos-hoje:
+    get:
+      summary: Lista os jogos de futebol de hoje
+      operationId: getJogosHoje
+      responses:
+        '200':
+          description: Lista de partidas do dia
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    liga:
+                      type: string
+                      example: Premier League
+                    hora:
+                      type: string
+                      example: 2025-05-15T15:00:00Z
+                    mandante:
+                      type: string
+                      example: Arsenal
+                    visitante:
+                      type: string
+                      example: Manchester City
